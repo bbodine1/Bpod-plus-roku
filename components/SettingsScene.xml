@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="SettingsScene" extends="Scene">
+  <interface>
+    <field id="settings" type="assocarray" />
+  </interface>
+
+  <children>
+    <Label id="title" translation="[70,60]" font="font:LargeBoldSystemFont" text="Peapix Screensaver Settings" />
+
+    <LabelList id="list"
+               translation="[70,140]"
+               width="900"
+               height="760" />
+
+    <Label id="hint"
+           translation="[70,930]"
+           font="font:SmallSystemFont"
+           text="Left/Right changes values. OK = save (or run Preview). Back = cancel/exit preview." />
+
+    <PreviewView id="preview" visible="false" />
+
+    <Label id="previewHint"
+           translation="[70, 1010]"
+           font="font:SmallSystemFont"
+           text="Preview mode: press any button to go back"
+           visible="false" />
+
+    <KeyboardDialog id="zipKeyboard" title="Enter ZIP (optional)" buttons="OK,Cancel" />
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/components/SettingsScene.brs" />
+</component>
