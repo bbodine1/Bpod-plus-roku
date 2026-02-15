@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="WeatherTask" extends="Task">
+  <interface>
+    <field id="zip" type="string" />
+    <field id="units" type="string" /> <!-- "f" or "c" -->
+    <field id="result" type="assocarray" alwaysNotify="true" />
+  </interface>
+  <script type="text/brightscript" uri="pkg:/components/WeatherTask.brs" />
+</component>
