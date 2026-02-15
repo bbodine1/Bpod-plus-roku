@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component name="PreviewView" extends="Group">
+  <interface>
+    <field id="settings" type="assocarray" />
+    <field id="active" type="boolean" value="false" />
+  </interface>
+
+  <children>
+    <Poster id="bg" width="1920" height="1080" translation="[0,0]" />
+
+    <Label id="clock" translation="[70, 60]" font="font:LargeBoldSystemFont" />
+
+    <Group id="weather" translation="[310, 52]" visible="false">
+      <Poster id="wxIcon" width="72" height="72" />
+      <Label id="wxTemps" translation="[85, 18]" font="font:MediumSystemFont" />
+    </Group>
+
+    <Rectangle id="metaBg"
+               translation="[40, 940]"
+               width="1840"
+               height="120"
+               color="0x000000FF"
+               opacity="0" />
+
+    <Label id="meta"
+           translation="[70, 960]"
+           width="1780"
+           wrap="true"
+           font="font:MediumSystemFont"
+           opacity="0" />
+
+    <Timer id="tickTimer" repeat="true" duration="1" />
+    <Timer id="weatherTimer" repeat="true" duration="1800" />
+
+    <FeedTask id="feedTask" />
+    <WeatherTask id="weatherTask" />
+
+    <Animation id="metaFadeIn" duration="0.4" repeat="false">
+      <FloatFieldInterpolator fieldToInterp="opacity"
+                              key="[0.0, 1.0]"
+                              keyValue="[0.0, 0.75]" />
+    </Animation>
+
+    <Animation id="metaFadeOut" duration="0.4" repeat="false">
+      <FloatFieldInterpolator fieldToInterp="opacity"
+                              key="[0.0, 1.0]"
+                              keyValue="[0.75, 0.0]" />
+    </Animation>
+  </children>
+
+  <script type="text/brightscript" uri="pkg:/components/PreviewView.brs" />
+</component>
