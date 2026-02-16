@@ -35,7 +35,7 @@ end sub
 
 ' ---------- Registry-backed settings ----------
 function LoadSettings() as Object
-  s = CreateObject("roRegistrySection", "peapix_saver")
+  s = CreateObject("roRegistrySection", "bpod+_saver")
   d = DefaultSettings()
 
   out = {
@@ -53,7 +53,7 @@ function LoadSettings() as Object
 end function
 
 sub SaveSettings(settings as Object)
-  s = CreateObject("roRegistrySection", "peapix_saver")
+  s = CreateObject("roRegistrySection", "bpod+_saver")
   s.Write("slideSeconds", settings.slideSeconds.ToStr())
   s.Write("metaStartSec", settings.metaStartSec.ToStr())
   s.Write("metaEndSec", settings.metaEndSec.ToStr())
